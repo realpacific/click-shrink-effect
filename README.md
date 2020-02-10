@@ -23,13 +23,13 @@ Java:
 ```
 ClickShrinkEffectKt.applyClickShrink(button);
 ClickShrinkEffectKt.applyClickShrink(fab);
+
+// on 2.0 onwards...
+ClickShrinkUtils.applyClickShrink(fab);
     // OR
 new ClickShrinkEffect(button);
 new ClickShrinkEffect(fab);
 ```
-
-
-
 
 ## Installation
 In build.gradle
@@ -43,7 +43,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.github.realpacific:click-shrink-effect:1.0'
+    implementation 'com.github.realpacific:click-shrink-effect:2.0'
 }
 ```
 
