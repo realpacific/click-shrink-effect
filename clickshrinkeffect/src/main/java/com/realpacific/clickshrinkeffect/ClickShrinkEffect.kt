@@ -1,4 +1,7 @@
+@file:JvmName("ClickShrinkUtils")
+
 package com.realpacific.clickshrinkeffect
+
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -8,6 +11,7 @@ import android.view.View
 import java.lang.ref.WeakReference
 
 private const val SHRINK_VALUE = 0.93f
+private const val DURATION_ANIMATION = 100L
 
 class ClickShrinkEffect(view: View) {
 
@@ -29,7 +33,7 @@ class ClickShrinkEffect(view: View) {
         val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1f, SHRINK_VALUE)
         weakRefView.get()?.apply {
             val animator = ObjectAnimator.ofPropertyValuesHolder(this, scaleX, scaleY)
-            animator.duration = 100
+            animator.duration = DURATION_ANIMATION
             return animator
         }
         return null
@@ -41,7 +45,7 @@ class ClickShrinkEffect(view: View) {
         val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, SHRINK_VALUE, 1f)
         weakRefView.get()?.apply {
             val animator = ObjectAnimator.ofPropertyValuesHolder(this, scaleX, scaleY)
-            animator.duration = 100
+            animator.duration = DURATION_ANIMATION
             return animator
         }
         return null
