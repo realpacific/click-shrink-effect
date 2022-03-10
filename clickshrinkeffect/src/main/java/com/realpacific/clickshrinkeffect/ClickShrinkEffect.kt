@@ -23,6 +23,7 @@ class ClickShrinkEffect(view: View) {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> buildShrinkAnimator()?.start()
                 MotionEvent.ACTION_UP -> buildGrowAnimator()?.start()
+                MotionEvent.ACTION_CANCEL -> buildGrowAnimator()?.start()
             }
             return@setOnTouchListener false
         }
